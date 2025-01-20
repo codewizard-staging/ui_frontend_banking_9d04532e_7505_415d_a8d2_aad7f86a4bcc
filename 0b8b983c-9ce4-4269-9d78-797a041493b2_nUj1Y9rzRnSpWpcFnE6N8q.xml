@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+    <edmx:DataServices>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="Model">
+            <EntityType HasStream="false" Name="Product">
+                <Key>
+                    <PropertyRef Name="ProductId"/>
+                </Key>
+                <Property Name="ProductId" Type="Edm.Int32" isUnique="false"/>
+                <Property Name="ProductCode" Type="Edm.String" isUnique="true"/>
+                <Property Name="ProductName" Type="Edm.String" isUnique="false"/>
+                <Property Name="Description" Type="Edm.String" isUnique="false"/>
+                <Property Name="Currency" Type="Model.Currency" isUnique="false"/>
+                <Property Name="ProductFamily" Type="Edm.String" isUnique="false"/>
+                <Property Name="LineOfBusiness" Type="Model.LineOfBusiness" isUnique="false"/>
+                <NavigationProperty Name="SelectedFeePlan" Type="Model.FeePlan"/>
+            </EntityType>
+            <EntityType HasStream="false" Name="Customer">
+                <Key>
+                    <PropertyRef Name="CustomerId"/>
+                </Key>
+                <Property Name="CustomerId" Type="Edm.Int32" isUnique="false"/>
+                <Property Name="CustomerName" Type="Edm.String" isUnique="false"/>
+                <Property Name="CustomerType" Type="Model.CustomerType" isUnique="false"/>
+                <Property Name="PhoneNo" Type="Edm.String" isUnique="false"/>
+                <Property Name="EmailId" Type="Edm.String" isUnique="false"/>
+                <NavigationProperty Name="Accounts" Type="Collection(Model.Account)"/>
+            </EntityType>
+            <EntityType HasStream="false" Name="Account">
+                <Key>
+                    <PropertyRef Name="AccountId"/>
+                </Key>
+                <Property Name="AccountId" Type="Edm.Int64" isUnique="false"/>
+                <Property Name="AccountNumber" Type="Edm.String" isUnique="false"/>
+                <Property Name="AccType" Type="Model.AccountType" isUnique="false"/>
+                <Property Name="Balance" Type="Edm.Decimal" isUnique="false"/>
+                <Property Name="Currency" Type="Model.Currency" isUnique="false"/>
+                <Property Name="Attribute1" Type="Edm.String" isUnique="false"/>
+                <NavigationProperty Name="FinancialProduct" Type="Model.Product"/>
+                <NavigationProperty Name="Transactions" Type="Collection(Model.Transaction)"/>
+            </EntityType>
+            <EntityType HasStream="false" Name="Transaction">
+                <Key>
+                    <PropertyRef Name="TransactionId"/>
+                </Key>
+                <Property Name="TransactionId" Type="Edm.Int32" isUnique="false"/>
+                <Property Name="TransactionDate" Type="Edm.Date" isUnique="false"/>
+                <Property Name="TransactionAmount" Type="Edm.Decimal" isUnique="false"/>
+                <Property Name="TransactionType" Type="Model.TransactionType" isUnique="false"/>
+            </EntityType>
+            <EntityType HasStream="false" Name="FeePlan">
+                <Key>
+                    <PropertyRef Name="PlanId"/>
+                </Key>
+                <Property Name="PlanId" Type="Edm.Int32" isUnique="false"/>
+                <Property Name="FeePlanName" Type="Edm.String" isUnique="true"/>
+                <Property Name="EffectiveDuration" Type="Edm.Duration" isUnique="false"/>
+                <Property Name="FeeItem" Type="Edm.String" isUnique="false"/>
+                <Property Name="FeeValue" Type="Edm.Decimal" isUnique="false"/>
+            </EntityType>
+            <EntityContainer Name="Container">
+                <EntitySet Name="Products" EntityType="Model.Product">
+                    <NavigationPropertyBinding Path="SelectedFeePlan" Target="FeePlans"/>
+                </EntitySet>
+                <EntitySet Name="Customers" EntityType="Model.Customer">
+                    <NavigationPropertyBinding Path="Accounts" Target="Accounts"/>
+                </EntitySet>
+                <EntitySet Name="Accounts" EntityType="Model.Account">
+                    <NavigationPropertyBinding Path="FinancialProduct" Target="Products"/>
+                    <NavigationPropertyBinding Path="Transactions" Target="Transactions"/>
+                </EntitySet>
+                <EntitySet Name="Transactions" EntityType="Model.Transaction"/>
+                <EntitySet Name="FeePlans" EntityType="Model.FeePlan"/>
+            </EntityContainer>
+            <EnumType Name="Currency">
+                <Member Name="USD" Value="0"/>
+                <Member Name="EURO" Value="1"/>
+                <Member Name="INR" Value="2"/>
+                <Member Name="CAD" Value="3"/>
+                <Member Name="AUD" Value="4"/>
+            </EnumType>
+            <EnumType Name="ProductFamily">
+                <Member Name="DemandDepositAccount" Value="0"/>
+                <Member Name="SavingsAccount" Value="1"/>
+                <Member Name="LoanAccount" Value="2"/>
+            </EnumType>
+            <EnumType Name="LineOfBusiness">
+                <Member Name="ConsumerBanking" Value="0"/>
+                <Member Name="SmallBusinessBanking" Value="1"/>
+                <Member Name="LargeCorporateBanking" Value="2"/>
+            </EnumType>
+            <EnumType Name="CalLogic">
+                <Member Name="Periodic" Value="0"/>
+                <Member Name="Transactional" Value="1"/>
+                <Member Name="SetupBased" Value="2"/>
+            </EnumType>
+            <EnumType Name="AccountType">
+                <Member Name="Saving" Value="0"/>
+                <Member Name="Current" Value="1"/>
+                <Member Name="Salary" Value="2"/>
+            </EnumType>
+            <EnumType Name="TransactionType">
+                <Member Name="Debit" Value="0"/>
+                <Member Name="Credit" Value="1"/>
+                <Member Name="SelfTransfer" Value="2"/>
+            </EnumType>
+            <EnumType Name="CustomerType">
+                <Member Name="Individual" Value="0"/>
+                <Member Name="Business" Value="1"/>
+            </EnumType>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

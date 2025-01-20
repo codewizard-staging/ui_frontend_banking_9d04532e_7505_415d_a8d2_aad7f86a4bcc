@@ -1,0 +1,127 @@
+{
+
+"product": [
+    {
+        "key": "ProductId",
+        "type": "keyid",
+        "UIComponentTitle": "Product"
+    }
+    
+    ,{
+        "key": "ProductCode",
+        "label": "ProductCode",
+        "type": "text",
+        "editable": true,
+        "validators": [
+                    ]
+                            }
+    ,{
+        "key": "ProductName",
+        "label": "ProductName",
+        "type": "text",
+        "editable": true,
+        "validators": [
+                    ]
+                            }
+    ,{
+        "key": "Description",
+        "label": "Description",
+        "type": "text",
+        "editable": true,
+        "validators": [
+                    ]
+                            }
+    ,{
+        "key": "Currency",
+        "label": "Currency",
+        "type": "dropdown",
+        "valueId": "Value",
+        "nameId": "Name",
+        "contentId": "Name",
+        "source": "Currency",
+        "enum": true,
+        "editable": true,
+        "validators": [
+             "isNumber"
+        ]
+                            }
+    ,{
+        "key": "ProductFamily",
+        "label": "ProductFamily",
+        "type": "text",
+        "editable": true,
+        "validators": [
+                    ]
+                            }
+    ,{
+        "key": "LineOfBusiness",
+        "label": "LineOfBusiness",
+        "type": "dropdown",
+        "valueId": "Value",
+        "nameId": "Name",
+        "contentId": "Name",
+        "source": "LineOfBusiness",
+        "enum": true,
+        "editable": true,
+        "validators": [
+             "isNumber"
+        ]
+                            }
+    ,{
+        "key": "ProductSelectedFeePlan",
+        "label": "SelectedFeePlan",
+        "type": "dropdown",
+        "valueId": "PlanId",
+        "nameId": "FeePlanName",
+        "contentId": "FeePlanName",
+        "source": "FeePlan",
+        "uicomponent": "feeplanselectedfeeplan",
+        "create": true,
+        "editable": true,
+        "validators": [
+                    ]
+                            }
+]
+
+,"feeplanselectedfeeplan": [
+    {
+        "key": "PlanId",
+        "type": "keyid",
+        "UIComponentTitle": "SelectedFeePlan"
+    }
+    ,{
+        "key": "FeePlanName",
+        "label": "FeePlanName",
+        "type": "text",
+        "editable": true,
+        "validators": [
+                    ]
+                            }
+    ,{
+        "key": "EffectiveDuration",
+        "label": "EffectiveDuration",
+        "type": "text",
+        "editable": true,
+        "validators": [
+                    ]
+                            }
+    ,{
+        "key": "FeeItem",
+        "label": "FeeItem",
+        "type": "text",
+        "editable": true,
+        "validators": [
+                    ]
+                            }
+    ,{
+        "key": "FeeValue",
+        "label": "FeeValue",
+        "type": "text",
+        "editable": true,
+        "validators": [
+             "isFloat"
+, "isPositive"
+        ]
+                            }
+]
+}

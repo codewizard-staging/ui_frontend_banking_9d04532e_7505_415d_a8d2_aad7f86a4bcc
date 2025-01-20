@@ -1,0 +1,362 @@
+{
+        "account": [
+                        {
+                            "key": "AccountId",
+                            "type": "keyid"
+                        },
+                        {
+                            "key": "AccountNumber",
+                            "label": "AccountNumber",
+                            "type": "text",
+                            "editable": true,
+                            "validators": [
+                                "required"
+                            ],
+                            "validationMessages": [
+                                "AccountNumber is required"
+                            ]
+                        },
+                        {
+                            "key": "AccType",
+                            "label": "AccType",
+                            "type": "dropdown",
+                            "valueId": "Value",
+                            "nameId": "Name",
+                            "contentId": "Name",
+                            "source": "Model.AccountType",
+                            "editable": true,
+                            "validators": [
+                                "required",
+                                "isNumber"
+                            ],
+                            "validationMessages": [
+                                "AccType is required"
+                            ]
+                        },
+                        {
+                            "key": "Balance",
+                            "label": "Balance",
+                            "type": "dropdown",
+                            "valueId": "Value",
+                            "nameId": "Name",
+                            "contentId": "Name",
+                            "source": "Edm.Decimal",
+                            "editable": true,
+                            "validators": [
+                                "required",
+                                "isNumber"
+                            ],
+                            "validationMessages": [
+                                "Balance is required"
+                            ]
+                        },
+                        {
+                            "key": "Currency",
+                            "label": "Currency",
+                            "type": "dropdown",
+                            "valueId": "Value",
+                            "nameId": "Name",
+                            "contentId": "Name",
+                            "source": "Model.Currency",
+                            "editable": true,
+                            "validators": [
+                                "required",
+                                "isNumber"
+                            ],
+                            "validationMessages": [
+                                "Currency is required"
+                            ]
+                        },
+                        {
+                            "key": "Attribute1",
+                            "label": "Attribute1",
+                            "type": "text",
+                            "editable": true,
+                            "validators": [
+                                "required"
+                            ],
+                            "validationMessages": [
+                                "Attribute1 is required"
+                            ]
+                        },
+                    {
+                        "key": "AccountFinancialProduct",
+                        "type": "keyid"
+                    },
+                                    {
+                        "key": "AccountTransactions",
+                        "type": "keyid"
+                    }  
+                        ]
+,        "transaction": [
+                        {
+                            "key": "TransactionId",
+                            "type": "keyid"
+                        },
+                        {
+                            "key": "TransactionDate",
+                            "label": "TransactionDate",
+                            "type": "date",
+                            "editable": true,
+                            "validators": [
+                                "required"
+                            ],
+                            "validationMessages": [
+                                "TransactionDate is required"
+                            ]
+                        },
+                        {
+                            "key": "TransactionAmount",
+                            "label": "TransactionAmount",
+                            "type": "dropdown",
+                            "valueId": "Value",
+                            "nameId": "Name",
+                            "contentId": "Name",
+                            "source": "Edm.Decimal",
+                            "editable": true,
+                            "validators": [
+                                "required",
+                                "isNumber"
+                            ],
+                            "validationMessages": [
+                                "TransactionAmount is required"
+                            ]
+                        },
+                        {
+                            "key": "TransactionType",
+                            "label": "TransactionType",
+                            "type": "dropdown",
+                                "valueId": "Value",
+                                "nameId": "Name",
+                                "contentId": "Name",
+                                "source": "Model.TransactionType",
+                                "editable": true,
+                                "validators": [
+                                    "required",
+                                    "isNumber"
+                                ],
+                                "validationMessages": [
+                                    "TransactionType is required"
+                                ]
+                            }
+        ]
+,        "customer": [
+                        {
+                            "key": "CustomerId",
+                            "type": "keyid"
+                        },
+                        {
+                            "key": "CustomerName",
+                            "label": "CustomerName",
+                            "type": "text",
+                            "editable": true,
+                            "validators": [
+                                "required"
+                            ],
+                            "validationMessages": [
+                                "CustomerName is required"
+                            ]
+                        },
+                        {
+                            "key": "CustomerType",
+                            "label": "CustomerType",
+                            "type": "dropdown",
+                            "valueId": "Value",
+                            "nameId": "Name",
+                            "contentId": "Name",
+                            "source": "Model.CustomerType",
+                            "editable": true,
+                            "validators": [
+                                "required",
+                                "isNumber"
+                            ],
+                            "validationMessages": [
+                                "CustomerType is required"
+                            ]
+                        },
+                        {
+                            "key": "PhoneNo",
+                            "label": "PhoneNo",
+                            "type": "text",
+                            "editable": true,
+                            "validators": [
+                                "required"
+                            ],
+                            "validationMessages": [
+                                "PhoneNo is required"
+                            ]
+                        },
+                        {
+                            "key": "EmailId",
+                            "label": "EmailId",
+                            "type": "text",
+                            "editable": true,
+                            "validators": [
+                                "required"
+                            ],
+                            "validationMessages": [
+                                "EmailId is required"
+                            ]
+                        },
+                    {
+                        "key": "CustomerAccounts",
+                        "type": "keyid"
+                    }  
+                        ]
+,        "product": [
+                        {
+                            "key": "ProductId",
+                            "type": "keyid"
+                        },
+                        {
+                            "key": "ProductCode",
+                            "label": "ProductCode",
+                            "type": "text",
+                            "editable": true,
+                            "validators": [
+                                "required"
+                            ],
+                            "validationMessages": [
+                                "ProductCode is required"
+                            ]
+                        },
+                        {
+                            "key": "ProductName",
+                            "label": "ProductName",
+                            "type": "text",
+                            "editable": true,
+                            "validators": [
+                                "required"
+                            ],
+                            "validationMessages": [
+                                "ProductName is required"
+                            ]
+                        },
+                        {
+                            "key": "Description",
+                            "label": "Description",
+                            "type": "text",
+                            "editable": true,
+                            "validators": [
+                                "required"
+                            ],
+                            "validationMessages": [
+                                "Description is required"
+                            ]
+                        },
+                        {
+                            "key": "Currency",
+                            "label": "Currency",
+                            "type": "dropdown",
+                            "valueId": "Value",
+                            "nameId": "Name",
+                            "contentId": "Name",
+                            "source": "Model.Currency",
+                            "editable": true,
+                            "validators": [
+                                "required",
+                                "isNumber"
+                            ],
+                            "validationMessages": [
+                                "Currency is required"
+                            ]
+                        },
+                        {
+                            "key": "ProductFamily",
+                            "label": "ProductFamily",
+                            "type": "text",
+                            "editable": true,
+                            "validators": [
+                                "required"
+                            ],
+                            "validationMessages": [
+                                "ProductFamily is required"
+                            ]
+                        },
+                        {
+                            "key": "LineOfBusiness",
+                            "label": "LineOfBusiness",
+                            "type": "dropdown",
+                            "valueId": "Value",
+                            "nameId": "Name",
+                            "contentId": "Name",
+                            "source": "Model.LineOfBusiness",
+                            "editable": true,
+                            "validators": [
+                                "required",
+                                "isNumber"
+                            ],
+                            "validationMessages": [
+                                "LineOfBusiness is required"
+                            ]
+                        },
+                    {
+                        "key": "ProductSelectedFeePlan",
+                        "type": "keyid"
+                    }  
+                        ]
+,        "feeplan": [
+                        {
+                            "key": "PlanId",
+                            "type": "keyid"
+                        },
+                        {
+                            "key": "FeePlanName",
+                            "label": "FeePlanName",
+                            "type": "text",
+                            "editable": true,
+                            "validators": [
+                                "required"
+                            ],
+                            "validationMessages": [
+                                "FeePlanName is required"
+                            ]
+                        },
+                        {
+                            "key": "EffectiveDuration",
+                            "label": "EffectiveDuration",
+                            "type": "dropdown",
+                            "valueId": "Value",
+                            "nameId": "Name",
+                            "contentId": "Name",
+                            "source": "Edm.Duration",
+                            "editable": true,
+                            "validators": [
+                                "required",
+                                "isNumber"
+                            ],
+                            "validationMessages": [
+                                "EffectiveDuration is required"
+                            ]
+                        },
+                        {
+                            "key": "FeeItem",
+                            "label": "FeeItem",
+                            "type": "text",
+                            "editable": true,
+                            "validators": [
+                                "required"
+                            ],
+                            "validationMessages": [
+                                "FeeItem is required"
+                            ]
+                        },
+                        {
+                            "key": "FeeValue",
+                            "label": "FeeValue",
+                            "type": "dropdown",
+                                "valueId": "Value",
+                                "nameId": "Name",
+                                "contentId": "Name",
+                                "source": "Edm.Decimal",
+                                "editable": true,
+                                "validators": [
+                                    "required",
+                                    "isNumber"
+                                ],
+                                "validationMessages": [
+                                    "FeeValue is required"
+                                ]
+                            }
+        ]
+}

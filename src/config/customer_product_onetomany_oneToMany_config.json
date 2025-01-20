@@ -1,0 +1,107 @@
+{
+
+"customer": [
+    {
+        "key": "CustomerId",
+        "type": "keyid",
+        "UIComponentTitle": "Customer"
+    }
+    
+    ,{
+        "key": "CustomerName",
+        "label": "CustomerName",
+        "type": "text",
+        "editable": true,
+        "validators": [
+                    ]
+                            }
+    ,{
+        "key": "CustomerType",
+        "label": "CustomerType",
+        "type": "dropdown",
+        "valueId": "Value",
+        "nameId": "Name",
+        "contentId": "Name",
+        "source": "CustomerType",
+        "enum": true,
+        "editable": true,
+        "validators": [
+             "isNumber"
+        ]
+                            }
+    ,{
+        "key": "PhoneNo",
+        "label": "PhoneNo",
+        "type": "text",
+        "editable": true,
+        "validators": [
+                    ]
+                            }
+    ,{
+        "key": "EmailId",
+        "label": "EmailId",
+        "type": "text",
+        "editable": true,
+        "validators": [
+                    ]
+                            }
+]
+
+,"accountaccounts": [
+    {
+        "key": "AccountId",
+        "type": "keyid",
+        "UIComponentTitle": "Accounts",
+        "child": true,
+        "parent": "account",
+        "property": "Accounts",
+        "values": []
+    }
+    ,{
+        "key": "AccountNumber",
+        "label": "AccountNumber",
+        "type": "text",
+        "editable": true,
+        "validators": [
+                    ]
+                            }
+    ,{
+        "key": "AccType",
+        "label": "AccType",
+        "type": "dropdown",
+        "valueId": "Value",
+        "nameId": "Name",
+        "contentId": "Name",
+        "source": "AccountType",
+        "enum": true,
+        "editable": true,
+        "validators": [
+             "isNumber"
+        ]
+                            }
+    ,{
+        "key": "Balance",
+        "label": "Balance",
+        "type": "text",
+        "editable": true,
+        "validators": [
+             "isFloat"
+, "isPositive"
+        ]
+                            }
+    ,{
+        "key": "Currency",
+        "label": "Currency",
+        "type": "dropdown",
+        "valueId": "Value",
+        "nameId": "Name",
+        "contentId": "Name",
+        "source": "Currency",
+        "enum": true,
+        "editable": true,
+        "validators": [
+             "isNumber"
+        ]
+                            }
+]
+}
