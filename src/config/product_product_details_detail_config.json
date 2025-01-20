@@ -98,14 +98,6 @@
                     ]
                             }
     ,{
-        "key": "EffectiveDuration",
-        "label": "EffectiveDuration",
-        "type": "text",
-        "editable": true,
-        "validators": [
-                    ]
-                            }
-    ,{
         "key": "FeeItem",
         "label": "FeeItem",
         "type": "text",
