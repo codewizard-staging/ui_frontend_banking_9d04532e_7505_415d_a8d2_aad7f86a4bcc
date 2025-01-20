@@ -15,4 +15,4 @@ export const DRAWER_WIDTH = 200;
 
 export const ROWSPERPAGE = [5, 10, 15, 20, 25];
 
-export const apiUrl = "http://apprunner-dev.code-wizard.in:8206/backend_banking/";
+export const apiUrl = "http://apprunner-dev.code-wizard.in:8215/bankingbackendv2/";
